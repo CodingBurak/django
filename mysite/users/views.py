@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import RegisterForm
 
@@ -16,3 +17,7 @@ def register(request):
        messages.success(request, "Welcome {} , dont loose your pw {} and thanks for registering".format(username, password))
        return redirect("login")
   return render(request, "users/register.html", {"form":form})
+
+@login_required(login_url="login")
+def profile(request):
+  return render(request, "users/profile.html")

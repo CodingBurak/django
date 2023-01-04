@@ -22,6 +22,7 @@
       <li class="nav-item "> <a class=" nav-link">view item</a> </li>
       {% if user.is_authenticated %}
       <li class="nav-item ">  <a class=" nav-link float-right"href="{% url 'logout' %}">Logout {{user.username}}</a></li>
+      <li class="nav-item ">  <a class=" nav-link" href="{% url 'profile' %}">profile</a></li>
       {% else %}
       <li class="nav-item ">  <a class=" nav-link float-right"href="{% url 'login' %}">Login</a></li>
       {% endif %}
