@@ -20,6 +20,12 @@
       <li class="nav-item "><a href="{% url 'food:create_item' %}"class="nav-link">add item</a> </li>
        <li class="nav-item "><a class=" nav-link">delete item</a> </li>
       <li class="nav-item "> <a class=" nav-link">view item</a> </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item ">  <a class=" nav-link float-right"href="{% url 'logout' %}">Logout {{user.username}}</a></li>
+      {% else %}
+      <li class="nav-item ">  <a class=" nav-link float-right"href="{% url 'login' %}">Login</a></li>
+      {% endif %}
+     
     </ul>
 
   </nav>
