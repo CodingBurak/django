@@ -19,14 +19,14 @@
         <img class ="card" height="150px" src={{item.item_image}}></img>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4 p-5">
         <h3>{{item.item_name}}</h3>
         <h5>{{item.item_desc}}</h5><h5>{{item.item_price}}</h5>
-        
+        <h2>{{item.user_name.username}}</h2>
       </div>
 
       <div class="col-md-2">
-        <a href="{% url 'food:detail' item.id %}" class="btn btn-success"> Detail </a>
+        <a href="{{item.get_absolute_url}}" class="btn btn-success"> Detail </a>
         <a href="{% url 'food:update_item' item.id %}" class="btn btn-primary"> Update </a>
         <a href="{% url 'food:delete_item' item.id %}"class="btn btn-warning"> Delete </a>
       </div>
